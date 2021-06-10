@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import SignIn from "./modal/SignIn";
+import { observer } from "mobx-react-lite";
+import { Context } from "../index";
 
-const GetStart = () => {
+const GetStart = observer(() => {
+  const { user } = useContext(Context);
+  const handleClickOpen = () => {
+    user.setIsOpen(true);
+  };
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -54,7 +59,9 @@ const GetStart = () => {
               </div>
             </div>
 
-            <SignIn />
+            <button className="get_start_butt" onClick={handleClickOpen}>
+              GET STARTED
+            </button>
           </div>
           <div>
             <h2 className="uppercase">
@@ -76,6 +83,6 @@ const GetStart = () => {
       )}
     </div>
   );
-};
+});
 
 export default GetStart;

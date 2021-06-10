@@ -9,7 +9,6 @@ import jwt_decode from "jwt-decode";
 const SignUp = observer(() => {
   const { user } = useContext(Context);
 
-  const [open, setOpen] = useState(false);
   const [sign, setSign] = useState(false);
   const [checked, setChecked] = useState(false);
   const [email, setEmail] = useState("");
@@ -64,11 +63,13 @@ const SignUp = observer(() => {
     setChecked(event.target.checked);
   };
   const handleClickOpen = () => {
-    setOpen(true);
+    user.setIsOpen(true);
+    // setOpen(true);
   };
 
   const handleClose = () => {
-    setOpen(false);
+    user.setIsOpen(false);
+    //setOpen(false);
   };
   const handle = () => {
     if (sign) {
@@ -83,7 +84,7 @@ const SignUp = observer(() => {
       </button>
 
       <Dialog
-        open={open}
+        open={user.isOpen}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >

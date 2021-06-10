@@ -1,4 +1,6 @@
-
+body{
+  box-sizing: border-box;
+}
 .header {
   display: flex;
   width: 100%;
@@ -11,6 +13,7 @@
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  z-index: 9999;
 }
 .header_img {
   height: 30px;
@@ -670,10 +673,7 @@ margin: 0;
     align-items: center;
     justify-content: center;
   }
-  .slider_page{
-    height: 200px;
-    background-color: rgb(246, 246, 246);
-  }
+  
   .sectionWitPic{
     box-sizing: border-box;
     height: 500px;
@@ -1467,4 +1467,83 @@ margin: 0;
     padding-top: 2.5px; 
     border-radius: 0px; 
     width: 134px; 
+  }
+  .slider_page_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+   
+    width: 690px;
+    height: 130px;
+  }
+  .slider_page{
+    display: flex;
+    height: 230px;
+    background-color: rgb(219, 13, 13);
+   width: calc(100vw);
+    box-sizing: border-box;
+    
+  }
+  .slider_page-div_img{
+      height: 100%;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 150px;
+  }
+  .slider_page_div_d{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slider_page_div_hhhh{
+    text-align: center;
+    margin-top: 30px;
+  }
+  .slider_page_div_hhhh_h{
+   margin: 30px 0 0 0;
+   font-family: Bahnschrift; 
+
+  }
+  .slider_page_div_hhhh_p{
+   white-space: rap;
+
+  }
+  .slider_page_div_hhhh_pp{
+   margin: 10px 0 0 0;
+   font-size: 15px;
+   font-family: Bahnschrift; 
+
+  }
+  .slide{
+    height: 230px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(246, 246, 246); 
+
+
+  }
+  .slidedddd{
+    height: 230px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: calc(100vw - 200px);
+    background-color: rgb(231, 231, 231); 
+
+
+  }
+  .slidedddderrr{
+    height: 230px;
+    box-sizing: border-box;
+    display: flex;
+   
+    justify-content: center;
+
+    /* background-color: rgb(246, 246, 246);  */
+    background-color: rgb(231, 231, 231); 
+
   }

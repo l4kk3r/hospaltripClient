@@ -1,5 +1,6 @@
 import React from "react";
 import AskQuestion from "../components/AskQuestion";
+import Slide from "../components/Slide";
 import Contacts from "../components/Contacts";
 import ContentFind from "../components/ContentFind";
 import CountriesTourism from "../components/CountriesTourism";
@@ -8,7 +9,7 @@ import GetStart from "../components/GetStart";
 import Partnership from "../components/Partnership";
 import SectionInfo from "../components/SectionInfo";
 import SectionWitPic from "../components/SectionWitPic";
-import Slider from "../components/Slider";
+import Sliderr from "../components/Sliderr";
 import TelNumber from "../components/TelNumber";
 import TreatmentList from "../components/TreatmentList";
 import Turkey from "../components/Turkey";
@@ -21,7 +22,9 @@ const Content = () => {
       <GetStart />
       <Covid />
       <SectionInfo />
-      <Slider />
+      {/* <Sliderr /> */}
+
+      <Slide />
       <div>ef</div>
       {/* <SectionWitPic /> */}
       <YourMain />
