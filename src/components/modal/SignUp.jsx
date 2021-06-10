@@ -11,10 +11,12 @@ const SignUp = observer(() => {
 
   const [open, setOpen] = useState(false);
   const [sign, setSign] = useState(false);
-  const [manager, setManager] = useState(false);
   const [checked, setChecked] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [messag, setMessag] = useState("");
+  const [messagReg, setMessagReg] = useState("");
 
   const [confirmPassword, setConfirmPassword] = useState("");
   const [name, setName] = useState("");
@@ -24,7 +26,8 @@ const SignUp = observer(() => {
       let data;
       data = await login(email, password).catch(function (error) {
         if (error.response) {
-          alert(error.response.data.message);
+          // alert(error.response.data.message);
+          setMessag(error.response.data.message);
         }
       });
       if (data.jwtToken) {
@@ -32,7 +35,7 @@ const SignUp = observer(() => {
         user.setIsAuth(true);
       }
     } catch (e) {
-      alert(e.message);
+      console.log(e.message);
     }
   };
 
@@ -42,7 +45,8 @@ const SignUp = observer(() => {
       data = await registration(name, email, password, confirmPassword).catch(
         function (error) {
           if (error.response) {
-            alert(error.response.data.message);
+            //alert(error.response.data.message);
+            setMessagReg(error.response.data.message);
           }
         }
       );
@@ -52,7 +56,7 @@ const SignUp = observer(() => {
         user.setUser(jwt_decode(data.jwtToken));
       }
     } catch (e) {
-      alert(e.message);
+      console.log(e.message);
     }
   };
 
@@ -71,11 +75,7 @@ const SignUp = observer(() => {
       setSign(false);
     } else setSign(true);
   };
-  const managerLogin = () => {
-    if (manager) {
-      setManager(false);
-    } else setManager(true);
-  };
+
   return (
     <div>
       <button className="button_log_butt" onClick={handleClickOpen}>
@@ -92,6 +92,9 @@ const SignUp = observer(() => {
             {sign ? (
               <>
                 <h2 className="dialog_title_h2">Register</h2>
+                <div className="input_modal_link_p_c_ddddddddd">
+                  <p className="input_modal_link_p_c_ddd">{messagReg}</p>
+                </div>
                 <div className="input_modal">
                   <input
                     className="input_modal_email"
@@ -102,17 +105,7 @@ const SignUp = observer(() => {
                     required
                   />
                 </div>
-                {manager ? (
-                  <div className="input_modal">
-                    <input
-                      className="input_modal_email"
-                      type="text"
-                      placeholder="What hospital do you represent?"
-                    />
-                  </div>
-                ) : (
-                  <></>
-                )}
+
                 <div className="input_modal">
                   <input
                     className="input_modal_email"
@@ -160,11 +153,7 @@ const SignUp = observer(() => {
                     Create an account
                   </button>
                 </div>
-                <div className="input_modal_butt_div">
-                  <button className="input_modal_butt" onClick={managerLogin}>
-                    Signup as a manager
-                  </button>
-                </div>
+
                 <div className="input_modal_link">
                   <p className="input_modal_link_p">
                     Already a member?{" "}
@@ -177,6 +166,10 @@ const SignUp = observer(() => {
             ) : (
               <>
                 <h2 className="dialog_title_h2">Login</h2>
+                <div className="input_modal_link_p_c_ddddddddd">
+                  <p className="input_modal_link_p_c_ddd">{messag}</p>
+                </div>
+
                 <div className="input_modal">
                   <input
                     className="input_modal_email"
