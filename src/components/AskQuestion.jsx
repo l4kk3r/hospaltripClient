@@ -2,6 +2,7 @@ import React from "react";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import TelegramIcon from "@material-ui/icons/Telegram";
 import FacebookIcon from "@material-ui/icons/Facebook";
+import AskQues from "./modal/AskQues";
 
 const AskQuestion = () => {
   return (
@@ -43,9 +44,7 @@ const AskQuestion = () => {
             </div>
           </div>
           <div className="askQuestion_div_footer_row">
-            <button className="askQuestion_div_footer_row_button">
-              Ask a question
-            </button>
+            <AskQues />
           </div>
 
           <div className="askQuestion_div_footer_row_icon">

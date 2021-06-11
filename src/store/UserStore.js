@@ -4,6 +4,7 @@ export default class UserStore {
   constructor() {
     this._isAuth = localStorage.getItem("isAuth");
     this._isOpen = false;
+    this._isOpenAsk = false;
     this._user = {};
     makeAutoObservable(this);
   }
@@ -15,6 +16,9 @@ export default class UserStore {
   setIsOpen(bool) {
     this._isOpen = bool;
   }
+  setIsOpenAsk(bool) {
+    this._isOpenAsk = bool;
+  }
   setUser(user) {
     this._user = user;
   }
@@ -24,6 +28,9 @@ export default class UserStore {
   }
   get isOpen() {
     return this._isOpen;
+  }
+  get isOpenAsk() {
+    return this._isOpenAsk;
   }
   get user() {
     return this._user;

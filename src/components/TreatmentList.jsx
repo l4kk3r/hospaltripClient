@@ -3,7 +3,11 @@ import React from "react";
 const TreatmentList = () => {
   return (
     <div className="treatmentList">
-      <div className="treatmentList_h"></div>
+      <div className="treatmentList_h">
+        <h1 className="turkey_h">
+          What <a className="greeeeeen">treatment</a> do you want to receive?
+        </h1>
+      </div>
       <div className="treatmentList_block_list">
         <div className="treatmentList_block">
           <div className="treatmentList_block_img">

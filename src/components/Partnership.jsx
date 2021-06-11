@@ -4,7 +4,9 @@ const Partnership = () => {
   return (
     <div className="partnership">
       <div className="partnership_h">
-        <h1 className="partnership_hрр">Hospital Partnerships</h1>
+        <h1 className="partnership_hрр">
+          Hospital <a className="greeeeeen">Partnerships</a>
+        </h1>
       </div>
       <div className="partnership_list">
         <div className="partnership_block">

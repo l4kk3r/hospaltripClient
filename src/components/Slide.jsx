@@ -7,7 +7,7 @@ const Slide = () => {
   let settings = {
     dots: true,
     infinite: true,
-    speed: 1100,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,

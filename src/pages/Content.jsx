@@ -14,6 +14,7 @@ import TelNumber from "../components/TelNumber";
 import TreatmentList from "../components/TreatmentList";
 import Turkey from "../components/Turkey";
 import YourMain from "../components/YourMain";
+import LatestSection from "../components/LatestSection";
 
 const Content = () => {
   return (
@@ -35,6 +36,7 @@ const Content = () => {
       <Partnership />
       <TelNumber />
       <Contacts />
+      <LatestSection />
     </div>
   );
 };

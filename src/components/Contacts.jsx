@@ -4,7 +4,9 @@ const Contacts = () => {
   return (
     <div className="contacts">
       <div className="contacts_h">
-        <h1 className="contacts_hhh">Our contacts</h1>
+        <h1 className="contacts_hhh">
+          Our <a className="greeeeeen">contacts</a>
+        </h1>
       </div>
       <div className="contacts_p">
         <p className="contacts_ppp">

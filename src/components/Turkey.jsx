@@ -4,7 +4,9 @@ const Turkey = () => {
   return (
     <div className="turkey">
       <div className="turkey_hdiv">
-        <h1 className="turkey_h">For instance, a Hollywood smile in Turkey</h1>
+        <h1 className="turkey_h">
+          For instance, a <a className="greeeeeen">Hollywood smile</a> in Turkey
+        </h1>
         <div className="turkey_list">
           <div className="turkey_block">
             <div className="turkey_bloc_small">
