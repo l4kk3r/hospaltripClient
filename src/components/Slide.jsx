@@ -2,8 +2,13 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const Slide = () => {
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down("xs"));
+
   let settings = {
     dots: true,
     infinite: true,
@@ -13,30 +18,59 @@ const Slide = () => {
     autoplay: true,
   };
   return (
-    <div className="slidedddderrr">
-      <Slider {...settings} className="slidedddd">
-        <div className="slider_page_div_hhhh">
-          <p className="slider_page_div_hhhh_p">
-            It is only digital
-            <br /> platform that covers many countries and the best clinics.{" "}
-            <br /> Great job!
-          </p>
-          <h3 className="slider_page_div_hhhh_h">Benali Ousama</h3>
-          <p className="slider_page_div_hhhh_pp">Morocco</p>
+    <>
+      {isMatch ? (
+        <div className="slidedddderrr_sm">
+          <Slider {...settings} className="slidedddd_sm">
+            <div className="slider_page_div_hhhh">
+              <p className="slider_page_div_hhhh_p">
+                It is only digital
+                <br /> platform that covers many countries and the best clinics.{" "}
+                <br /> Great job!
+              </p>
+              <h3 className="slider_page_div_hhhh_h">Benali Ousama</h3>
+              <p className="slider_page_div_hhhh_pp">Morocco</p>
+            </div>
+            <div className="slider_page_div_hhhh">
+              <p className="slider_page_div_hhhh_p">
+                In Bangladesh, it is quite dificult for me to find a good clinic
+                that <br />
+                best suits me for different criteria.
+                <br /> The Hospaltrip guys came up with a great option. And it's
+                free.
+              </p>
+              <h3 className="slider_page_div_hhhh_h">Aminul Begun</h3>
+              <p className="slider_page_div_hhhh_pp">Bangladesh</p>
+            </div>
+          </Slider>
         </div>
-        <div className="slider_page_div_hhhh">
-          <p className="slider_page_div_hhhh_p">
-            In Bangladesh, it is quite dificult for me to find a good clinic
-            that <br />
-            best suits me for different criteria.
-            <br /> The Hospaltrip guys came up with a great option. And it's
-            free.
-          </p>
-          <h3 className="slider_page_div_hhhh_h">Aminul Begun</h3>
-          <p className="slider_page_div_hhhh_pp">Bangladesh</p>
+      ) : (
+        <div className="slidedddderrr">
+          <Slider {...settings} className="slidedddd">
+            <div className="slider_page_div_hhhh">
+              <p className="slider_page_div_hhhh_p">
+                It is only digital
+                <br /> platform that covers many countries and the best clinics.{" "}
+                <br /> Great job!
+              </p>
+              <h3 className="slider_page_div_hhhh_h">Benali Ousama</h3>
+              <p className="slider_page_div_hhhh_pp">Morocco</p>
+            </div>
+            <div className="slider_page_div_hhhh">
+              <p className="slider_page_div_hhhh_p">
+                In Bangladesh, it is quite dificult for me to find a good clinic
+                that <br />
+                best suits me for different criteria.
+                <br /> The Hospaltrip guys came up with a great option. And it's
+                free.
+              </p>
+              <h3 className="slider_page_div_hhhh_h">Aminul Begun</h3>
+              <p className="slider_page_div_hhhh_pp">Bangladesh</p>
+            </div>
+          </Slider>
         </div>
-      </Slider>
-    </div>
+      )}
+    </>
   );
 };
 

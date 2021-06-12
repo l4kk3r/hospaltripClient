@@ -3,8 +3,12 @@ import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import TelegramIcon from "@material-ui/icons/Telegram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import AskQues from "./modal/AskQues";
+import { useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const AskQuestion = () => {
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down("xs"));
   return (
     <div className="askQuestion">
       <div className="askQuestion_div">
@@ -26,35 +30,40 @@ const AskQuestion = () => {
             </p>
           </div>
         </div>
-
-        <div className="askQuestion_div_footer">
-          <div className="askQuestion_div_footer_row">
-            <div>
-              <div>
-                <h2 className="askQuestion_div_footer_row_h">
-                  Dr. Walid Mhamda
-                </h2>
-              </div>
-              <div>
-                <p className="askQuestion_div_footer_row_p">
-                  Co-founder and your personal <br />
-                  Patient Manager
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="askQuestion_div_footer_row">
+        {isMatch ? (
+          <div className="askQuestion_sm">
             <AskQues />
           </div>
+        ) : (
+          <div className="askQuestion_div_footer">
+            <div className="askQuestion_div_footer_row">
+              <div>
+                <div>
+                  <h2 className="askQuestion_div_footer_row_h">
+                    Dr. Walid Mhamda
+                  </h2>
+                </div>
+                <div>
+                  <p className="askQuestion_div_footer_row_p">
+                    Co-founder and your personal <br />
+                    Patient Manager
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="askQuestion_div_footer_row">
+              <AskQues />
+            </div>
 
-          <div className="askQuestion_div_footer_row_icon">
-            <p className="askQuestion_div_footer_row_p">or contact via</p>
+            <div className="askQuestion_div_footer_row_icon">
+              <p className="askQuestion_div_footer_row_p">or contact via</p>
 
-            <WhatsAppIcon className="ask_block_icon_size_w" />
-            <TelegramIcon className="ask_block_icon_size_t" />
-            <FacebookIcon className="ask_block_icon_size_f" />
+              <WhatsAppIcon className="ask_block_icon_size_w" />
+              <TelegramIcon className="ask_block_icon_size_t" />
+              <FacebookIcon className="ask_block_icon_size_f" />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ const Partnership = () => {
           Hospital <a className="greeeeeen">Partnerships</a>
         </h1>
       </div>
+
       <div className="partnership_list">
         <div className="partnership_block">
           <img

@@ -9,12 +9,12 @@ import GetStart from "../components/GetStart";
 import Partnership from "../components/Partnership";
 import SectionInfo from "../components/SectionInfo";
 import SectionWitPic from "../components/SectionWitPic";
-import Sliderr from "../components/Sliderr";
 import TelNumber from "../components/TelNumber";
 import TreatmentList from "../components/TreatmentList";
 import Turkey from "../components/Turkey";
 import YourMain from "../components/YourMain";
 import LatestSection from "../components/LatestSection";
+import AppBarLeft from "../components/modal/AppBarLeft";
 
 const Content = () => {
   return (
@@ -23,11 +23,10 @@ const Content = () => {
       <GetStart />
       <Covid />
       <SectionInfo />
-      {/* <Sliderr /> */}
 
       <Slide />
-      <div>ef</div>
-      {/* <SectionWitPic /> */}
+
+      {/* <SectionWitPic /> error*/}
       <YourMain />
       <TreatmentList />
       <CountriesTourism />
